@@ -45,27 +45,37 @@ void loop() {
       /*==============================================================================
         IMPLEMENTAÇÃO DE HTML NO CÓIGO
         ============================================================================*/
-      client.println("<!DOCTYPE html>");
-      client.println("<html>");
-      client.println("<head>");
-      client.println("<!-- Meta tags Obrigatórias -->");
-      client.println("<meta charset='utf-8'>");
-      client.println("<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>");
-      client.println("<title>Titulo da Página</title>");
-      client.println("</head>");
-      client.println("<body bgcolor='#F0FFFF'>");
-      client.println("<h1 style='color: #FF4500; text-align: center;'>Olá, mundo!</h1>");
-      client.println("<div align='center'>");
-      client.println("<object width='425' height='344' data='https://www.youtube.com/embed/F9Bo89m2f6g'></object>");
-      client.println("<hr width='30%' size='5' noshade >");
-      client.println("</div>");
-      client.println("<p>Parabéns <b>ALUNO :) </b></p>");
-      client.println("<p>Agora é com você. Eu sugiro que a partir de agora você mesmo faça pequenas <b>ALTERAÇÕES</b> no seu texto. Procure colocar fotos, trocar fontes, cores de texto, insira links, em fim, aproveite a aportunidade de colocar em pratica, todos os seus conhecimentos de HTML em prática. </p>");
-      client.println("<p>Então é com<b>VOCÊ!</b>.<br> Não esqueça que tendo qualquer dúvida você pode entrar em contato, se precisar.</p>");
-      client.println("</body>");
-      client.println("</html>");
-      delay(1);// Delay() para garantir que o navegador receba esta informação que estamos enviado.
-      client.stop();// Condição encerrar a conexão.
+	client.println("<!DOCTYPE html>");
+        client.println("<html lang='pt-br'>");
+        client.println("<head>");//área de cabeçalho da página HTML 
+        client.println("<!-- Meta tags Obrigatórias -->");
+        client.println("<meta charset='utf-8'>");
+        client.println("<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>");
+        client.println("<title>Testando Servidor</title>");
+        client.println("<style>");//uso de CSS para estilizar a página HTML 
+        client.println("h1{color: #FF4500; text-align: center;}");
+        client.println("p{text-align: center;}");
+        client.println("#demo{text-align: center;}");
+        client.println("</style>");//end CSS 
+        client.println("</head>");//end área de cabeçalho da página HTML 
+        client.println("<body bgcolor='#F0FFFF'>");//área de corpo para HTML
+        client.println(" <header>");
+        client.println("<h1 >Hello World</h1>");
+        client.println(" </header>");
+        client.println(" <main>");
+        client.println("<div id='demo'>");
+        client.println("<iframe  width='320' height='240' src='https://www.youtube.com/embed/F9Bo89m2f6g' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>");
+        client.println("</iframe>");
+        client.println("</div>");
+        client.println("<p>Parabéns por chegar até <strong>AQUI</strong>!!!<br>Eu sugiro que a partir de agora você mesmo faça pequenas alterações no seu texto. Procure colocar fotos, trocar fontes, cores de texto, insira links, em fim, aproveite a aportunidade de colocar em pratica, todos os seus conhecimentos de <a href='https://www.w3schools.com/default.asp'>HTML 5</a> em prática.");
+        client.println("<br>Então é com <strong> VOCÊ!</strong> Não esqueça que tendo qualquer dúvida você pode entrar em contato, se precisar.</p>");
+        client.println("</main>");
+        client.println("<footer>");
+        client.println("</footer>");
+        client.println("</body>");
+        client.println("</html>");
+        delay(1);// Delay() para garantir que o navegador receba esta informação que estamos enviado.
+        client.stop();// Condição encerrar a conexão.
 
     }//Condição utilizado para forçar o programa ficar restito apenas as informações do seu conteúdo, através do parâmetro client.connected().
   }//Se existir tentativa de conexão do cliente com o  servidor através do endereço IP pré-configurado, as instruções abaixo serão executadas.
